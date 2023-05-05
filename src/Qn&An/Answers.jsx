@@ -1,4 +1,4 @@
-import { decodeHtml } from "../NextQ";
+import { decodeHtml } from ".";
 
 const Answers = ({answers, setSelect}) => {
 
