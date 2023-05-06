@@ -1,16 +1,22 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import decodeHtml from "./decoder";
 
-const Answers = ({question, setNextB, setCorrect}) => {
+const Answers = ({question, setNextB, block, setBlock, setCorrect}) => {
 
   console.log(question);
+  console.log(block);
+
   const answers = question && [...question.incorrect_answers, question.correct_answer];
 
   const change = (answ) => {
 
-    if(answ === question?.correct_answer) setCorrect(true);
-    else if(answ !== question?.correct_answer) setCorrect(false);
+    if(answ === question?.correct_answer && !block) {
+      setCorrect(true);
+      setBlock(true);
+    } else if(answ !== question?.correct_answer && !block) {
+      setCorrect(false);
+      setBlock(true);
+    } 
 
     setNextB(true);
   };
