@@ -1,25 +1,6 @@
 import React, { useState } from 'react';
-import decodeHtml from "./decoder";
-
-const getRandomInt = (max) => {
-  return Math.floor(Math.random() * max);
-};
-
-const randomizeArray = (arr) => {
-  const obj = {};
-  const newArr = [];
-
-  for(let i=0; i<arr.length; i++) {
-    let randN = getRandomInt(arr.length);
-    while(obj[randN]) {
-      randN = getRandomInt(arr.length);
-    }
-    obj[randN] = randN;
-    newArr.push(arr[randN]);
-  }
-
-  return newArr;
-}
+import decodeHtml from './functionality/decoder';
+import randomizeArray from './functionality/randomNum';
 
 const Answers = ({question, setNextB, block, setBlock, setCorrect, setP1Score, setP2Score, playing,setPlaying, mode}) => {
 

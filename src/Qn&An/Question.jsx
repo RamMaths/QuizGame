@@ -1,4 +1,4 @@
-import decodeHtml from "./decoder";
+import decodeHtml from "./functionality/decoder";
 
 const Question = ({question}) => {
   return (<>
