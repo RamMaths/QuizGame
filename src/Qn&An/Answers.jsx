@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import decodeHtml from './functionality/decoder';
 import randomizeArray from './functionality/randomNum';
 
-const Answers = ({question, setNextB, block, setBlock, setCorrect, setP1Score, setP2Score, playing,setPlaying, mode}) => {
+let answers=[];
+
+const Answers = ({question, nextB, setNextB, block, setBlock, setCorrect, setP1Score, setP2Score, playing,setPlaying, mode}) => {
 
   console.log(question);
   console.log(block);
 
-  const answers = question && randomizeArray([...question.incorrect_answers, question.correct_answer]);
+  answers = nextB? answers : question && randomizeArray([...question.incorrect_answers, question.correct_answer]);
   
 
   const change = (answ) => {

@@ -1,21 +1,32 @@
 import React, {useState} from 'react';
 import Trivia from './Qn&An/Trivia';
 import ModeMenu from './Mode/ModeMenu';
+import './App.css';
 
 function App() {
-  //I will use this state to set the amount of players
-  const [mode, setMode] = useState(0);
-  const [selected, setSelected] = useState(false);
 
-  console.log(mode);
-
-  return(<>
-    <h2>TriviaRam</h2>
-    {!selected && <ModeMenu setSelected={setSelected} setMode={setMode}/>}
-    {selected && <Trivia mode={mode}/>}
+  return(
+    <>
+      <Container/>
     </>
   );
 
+};
+
+const Container = () => {
+  const [mode, setMode] = useState(0);
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <div className="container">
+      <div className="menu">
+        {!selected && <ModeMenu setSelected={setSelected} setMode={setMode}/>}
+      </div>
+    <div className="game">
+      {selected && <Trivia mode={mode}/>}
+    </div>
+    </div>
+  );
 };
 
 export default App;

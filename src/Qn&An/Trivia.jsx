@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Question from './Question';
 import Answers from './Answers';
 import Scoreboard from './Scoreboard';
+import decodeHtml from './functionality/decoder';
 
 
 function Trivia({mode}) {
@@ -66,7 +67,7 @@ function Trivia({mode}) {
         <h2>You are correct</h2> :
         (<div>
           <h2>You are not correct</h2>
-          <h2>The answer is {question?.correct_answer}</h2>
+          <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
         </div>))
     }
 

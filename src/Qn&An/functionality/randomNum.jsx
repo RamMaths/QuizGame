@@ -3,15 +3,15 @@ const getRandomInt = (max) => {
 };
 
 const randomizeArray = (arr) => {
-  const obj = {};
+  const set = new Set();
   const newArr = [];
 
   for(let i=0; i<arr.length; i++) {
     let randN = getRandomInt(arr.length);
-    while(obj[randN]) {
+    while(set.has(randN)) {
       randN = getRandomInt(arr.length);
     }
-    obj[randN] = randN;
+    set.add(randN)
     newArr.push(arr[randN]);
   }
 
