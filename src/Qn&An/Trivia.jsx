@@ -35,6 +35,12 @@ function Trivia({mode}) {
   };
 
   return (<div className="trivia">
+    {
+      (mode===2) && (!playing ?  
+        <h4>Turn of player 1</h4> :
+        <h4>Turn of player 2</h4>)
+    }
+    
     { !question && 
       <button className="start-btn" onClick={getQuestion}>Start Button</button>
     }
