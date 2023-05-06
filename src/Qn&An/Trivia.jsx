@@ -8,6 +8,7 @@ function Trivia() {
   const [question, setQuestion] = useState('');
   const [nextB, setNextB] = useState(false);
   const [correct, setCorrect] = useState(false);
+  const [block, setBlock] = useState(false);
 
   const getQuestion = async () => {
     const url = 'https://opentdb.com/api.php?amount=1&difficulty=easy';
@@ -23,8 +24,9 @@ function Trivia() {
   };
 
   const handleNextB = () => {
+    nextB && getQuestion();
     setNextB(false);
-    getQuestion();
+    setBlock(false);
   };
 
   return (<div className="App">
@@ -37,7 +39,10 @@ function Trivia() {
     <Question question={question.question}/>
     <Answers 
       question={question} 
+      nextB={nextB}
       setNextB={setNextB} 
+      block={block}
+      setBlock={setBlock}
       setCorrect={setCorrect}
     />
 
