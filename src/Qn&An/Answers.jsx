@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import decodeHtml from "./decoder";
 
 const getRandomInt = (max) => {

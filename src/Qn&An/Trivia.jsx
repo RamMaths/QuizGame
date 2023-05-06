@@ -61,7 +61,13 @@ function Trivia({mode}) {
     />
 
     { 
-      nextB && (correct ? <h2>You are correct</h2> : <h2>You are not correct</h2>)
+      nextB && 
+        (correct ? 
+        <h2>You are correct</h2> :
+        (<div>
+          <h2>You are not correct</h2>
+          <h2>The answer is {question?.correct_answer}</h2>
+        </div>))
     }
 
     { nextB &&
