@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import decodeHtml from "./decoder";
 
-const Answers = ({question, setNextB, block, setBlock, setCorrect}) => {
+const Answers = ({question, setNextB, block, setBlock, setCorrect, setP1Score, setP2Score, playing,setPlaying, mode}) => {
 
   console.log(question);
   console.log(block);
@@ -13,11 +13,17 @@ const Answers = ({question, setNextB, block, setBlock, setCorrect}) => {
     if(answ === question?.correct_answer && !block) {
       setCorrect(true);
       setBlock(true);
+      (playing===false) && setP1Score(currentV => currentV + 1);
+      (mode===2 && playing===true) && setP2Score(currentV => currentV + 1);
+
+      mode===2 && setPlaying(!playing);
     } else if(answ !== question?.correct_answer && !block) {
       setCorrect(false);
       setBlock(true);
-    } 
 
+      mode===2 && setPlaying(!playing);
+    } 
+    
     setNextB(true);
   };
 

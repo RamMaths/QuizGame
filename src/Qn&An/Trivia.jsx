@@ -2,13 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import Question from './Question';
 import Answers from './Answers';
+import Scoreboard from './Scoreboard';
 
 
-function Trivia() {
+function Trivia({mode}) {
   const [question, setQuestion] = useState('');
   const [nextB, setNextB] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [block, setBlock] = useState(false);
+  const [p1Score, setP1Score] = useState(0);
+  const [p2Score, setP2Score] = useState(0);
+  //false it's the first player
+  const [playing, setPlaying] = useState(false);
 
   const getQuestion = async () => {
     const url = 'https://opentdb.com/api.php?amount=1&difficulty=easy';
@@ -42,6 +47,11 @@ function Trivia() {
       block={block}
       setBlock={setBlock}
       setCorrect={setCorrect}
+      setP1Score={setP1Score}
+      setP2Score={setP2Score}
+      playing={playing}
+      setPlaying={setPlaying}
+      mode={mode}
     />
 
     { 
@@ -51,6 +61,12 @@ function Trivia() {
     { nextB &&
       <button className="next-btn" onClick={handleNextB}>Next Button</button>
     }
+
+    <Scoreboard
+      p1Score={p1Score}
+      p2Score={p2Score}
+      mode={mode}
+    />
   </div>);
 }
 
