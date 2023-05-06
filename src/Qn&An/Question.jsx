@@ -1,4 +1,4 @@
-import { decodeHtml } from ".";
+import decodeHtml from "./decoder";
 
 const Question = ({question}) => {
   return (<>

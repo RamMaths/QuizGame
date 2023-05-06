@@ -1,23 +1,23 @@
-import { decodeHtml } from ".";
-import { useRef } from "react";
+import React from 'react';
 
-const Answers = ({answers, select, setSelect, setNextB, handleAnswer}) => {
+import decodeHtml from "./decoder";
+
+const Answers = ({question, setNextB, setCorrect}) => {
+
+  console.log(question);
+  const answers = question && [...question.incorrect_answers, question.correct_answer];
 
   const change = (answ) => {
 
-    setSelect(prevState => {
-      prevState = '';
-      prevState += decodeHtml(answ);
-      return prevState;
-    });
+    if(answ === question?.correct_answer) setCorrect(true);
+    else if(answ !== question?.correct_answer) setCorrect(false);
 
     setNextB(true);
-    handleAnswer(select);
   };
 
   return (<div>
-    {answers.map((answ, i) => {
-      return <button className='btn' key={i} onClick={() => change(answ)}>{answ}</button>
+    {question && answers.map((answ, i) => {
+      return <button className='btn' key={i} onClick={() => change(answ)}>{decodeHtml(answ)}</button>
     })}
     </div>);
 };
