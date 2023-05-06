@@ -72,7 +72,7 @@ function Trivia({mode}) {
     }
 
     { nextB &&
-      <button className="next-btn" onClick={handleNextB}>Next Button</button>
+      <button className="next-btn btn" onClick={handleNextB}>Next Button</button>
     }
 
     <Scoreboard

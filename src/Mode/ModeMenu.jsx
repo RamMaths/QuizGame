@@ -1,4 +1,3 @@
-
 const ModeMenu = ({setSelected, setMode}) => {
   const handle1P = () => {
     setSelected(true);

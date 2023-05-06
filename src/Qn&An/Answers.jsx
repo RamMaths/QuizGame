@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import decodeHtml from './functionality/decoder';
 import randomizeArray from './functionality/randomNum';
+import './Answers.css';
 
 let answers=[];
 
@@ -31,7 +32,7 @@ const Answers = ({question, nextB, setNextB, block, setBlock, setCorrect, setP1S
     setNextB(true);
   };
 
-  return (<div>
+  return (<div className='answers'>
     {question && answers.map((answ, i) => {
       return <button className='btn' key={i} onClick={() => change(answ)}>{decodeHtml(answ)}</button>
     })}
@@ -39,4 +40,3 @@ const Answers = ({question, nextB, setNextB, block, setBlock, setCorrect, setP1S
 };
 
 export default Answers;
-
