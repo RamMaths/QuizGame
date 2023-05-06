@@ -29,9 +29,7 @@ function Trivia() {
     setBlock(false);
   };
 
-  return (<div className="App">
-    <h2>TriviaRam</h2>
-
+  return (<div className="trivia">
     { !question && 
       <button className="start-btn" onClick={getQuestion}>Start Button</button>
     }
