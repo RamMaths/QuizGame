@@ -13,10 +13,11 @@ function Trivia({mode}) {
   const [block, setBlock] = useState(false);
   const [p1Score, setP1Score] = useState(0);
   const [p2Score, setP2Score] = useState(0);
-  const [p1Lifes, setP1Lifes] = useState(5);
-  const [p2Lifes, setP2Lifes] = useState(5);
+  const [p1Lifes, setP1Lifes] = useState(1);
+  const [p2Lifes, setP2Lifes] = useState(1);
   //false it's the first player
   const [playing, setPlaying] = useState(false);
+  const [lose, setLose] = useState(false);
 
   const player1 = {
     num: 1,
@@ -51,7 +52,7 @@ function Trivia({mode}) {
 
   return (<div className="trivia">
     {
-      (mode===2) && (!playing ?  
+      (mode===2 && !lose) && (!playing ?  
         <h4>Turn of player 1</h4> :
         <h4>Turn of player 2</h4>)
     }
@@ -71,9 +72,12 @@ function Trivia({mode}) {
       setP1Score={setP1Score}
       setP2Score={setP2Score}
       setP1Lifes={setP1Lifes}
+      p1Lifes={p1Lifes}
       setP2Lifes={setP2Lifes}
+      p2Lifes={p2Lifes}
       playing={playing}
       setPlaying={setPlaying}
+      setLose={setLose}
       mode={mode}
     />
 
@@ -100,6 +104,16 @@ function Trivia({mode}) {
         <Player 
           player={player2}
         />
+    }
+
+    {
+      (lose && mode===2) && (playing ?  
+        <h4>Player 1 loses</h4> :
+        <h4>Player 2 loses</h4> )
+    }
+
+    {
+      (lose && mode===1) && <h4>Player 1 loses</h4>
     }
 
   </div>);
