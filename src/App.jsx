@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Trivia from './Qn&An/Trivia';
 import ModeMenu from './Mode/ModeMenu';
-import './App.css';
 
 function App() {
 

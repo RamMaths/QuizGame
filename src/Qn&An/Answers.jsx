@@ -4,7 +4,21 @@ import randomizeArray from './functionality/randomNum';
 
 let answers=[];
 
-const Answers = ({question, nextB, setNextB, block, setBlock, setCorrect, setP1Score, setP2Score, playing,setPlaying, mode}) => {
+const Answers = ({
+  question,
+  nextB,
+  setNextB,
+  block,
+  setBlock,
+  setCorrect,
+  setP1Score,
+  setP2Score,
+  setP1Lifes,
+  setP2Lifes,
+  playing,
+  setPlaying,
+  mode
+  }) => {
 
   console.log(question);
   console.log(block);
@@ -24,8 +38,11 @@ const Answers = ({question, nextB, setNextB, block, setBlock, setCorrect, setP1S
     } else if(answ !== question?.correct_answer && !block) {
       setCorrect(false);
       setBlock(true);
-
       mode===2 && setPlaying(!playing);
+      
+      !playing? 
+        (setP1Lifes(curLifes => curLifes - 1)) :
+        (setP2Lifes(curLifes => curLifes - 1)) ;
     } 
     
     setNextB(true);
