@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import decodeHtml from './functionality/decoder';
 import randomizeArray from './functionality/randomNum';
-import './Answers.css';
 
 let answers=[];
 

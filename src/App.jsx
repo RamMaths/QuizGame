@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Trivia from './Qn&An/Trivia';
 import ModeMenu from './Mode/ModeMenu';
+import './index.css';
 
 function App() {
 
@@ -17,13 +18,9 @@ const Container = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className="container">
-      <div className="menu">
-        {!selected && <ModeMenu setSelected={setSelected} setMode={setMode}/>}
-      </div>
-    <div className="game">
+    <div className="flex flex-col items-center p-5">
+      {!selected && <ModeMenu setSelected={setSelected} setMode={setMode}/>}
       {selected && <Trivia mode={mode}/>}
-    </div>
     </div>
   );
 };

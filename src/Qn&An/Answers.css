@@ -1,7 +1,0 @@
-.answers {
-  padding: 20px 20px;
-  display: grid;
-  grid-template-columns: 10rem 10rem;
-  gap: 1em;
-  justify-content: center;
-}
