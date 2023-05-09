@@ -3,5 +3,6 @@ This a random project to train my react and css skills, i am starting this from 
 It's not finished of course, i will be updating everything till it's finished. Now I am focusing on implement the functionality then I will move on to the css.
 
 - [x] React
+- [x] Tailwind css
 
 
