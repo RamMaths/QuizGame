@@ -6,8 +6,12 @@ import decodeHtml from './functionality/decoder';
 import Player from './Player';
 
 
-function Trivia({mode}) {
-  const [question, setQuestion] = useState('');
+function Trivia({
+  mode,
+  question,
+  setQuestion,
+  getQuestion
+}) {
   const [nextB, setNextB] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [block, setBlock] = useState(false);
@@ -31,19 +35,6 @@ function Trivia({mode}) {
     pLifes: p2Lifes
   };
 
-  const getQuestion = async () => {
-    const url = 'https://opentdb.com/api.php?amount=1&difficulty=easy';
-
-    try {
-      const resp = await fetch(url);
-      const { results } = await resp.json();
-      const qData = results[0];
-      setQuestion({...qData});
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
   const handleNextB = () => {
     nextB && getQuestion();
     setNextB(false);
@@ -57,11 +48,8 @@ function Trivia({mode}) {
         <h4>Turn of player 2</h4>)
     }
     
-    { !question && 
-      <button className="start-btn" onClick={getQuestion}>Start Button</button>
-    }
-
     <Question question={question.question}/>
+
     <Answers 
       question={question} 
       nextB={nextB}
@@ -95,12 +83,14 @@ function Trivia({mode}) {
       <button className="next-btn btn" onClick={handleNextB}>Next Button</button>
     }
 
-    <Player
-      player={player1}
-    />
+    { question &&
+      <Player
+        player={player1}
+      />
+    }
 
     {
-      mode === 2 && 
+      (mode === 2 && question) && 
         <Player 
           player={player2}
         />
