@@ -77,9 +77,9 @@ const Answers = ({
     (answ !== question?.correct_answer && !block) && incorrect();
   };
 
-  return (<div className='grid grid-cols-2 gap-1'>
+    return (<div className='grid grid-cols-2 items-end'>
     {question && answers.map((answ, i) => {
-    return <Button className={`rounded-md w-28 h-20 px-4 m-2 ${colorVariants[colors[i]]}`} key={i} change={change} answ={answ}/>
+    return <Button className={`drop-shadow-md min-wit-full rounded-md px-4 m-2 h-5/6 ${colorVariants[colors[i]]}`} key={i} change={change} answ={answ}/>
     })}
     </div>);
 };

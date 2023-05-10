@@ -41,37 +41,42 @@ function Trivia({
     setBlock(false);
   };
 
-  return (<div className="flex flex-col align-center bg-gray-500 rounded-md">
-    {
-      (mode===2 && !lose) && (!playing ?  
-        <h4 className='text-center'>Turn of player 1</h4> :
-        <h4 className='text-center'>Turn of player 2</h4>)
-    }
-    
-    <Question question={question.question}/>
+  return (
+  <div className="grid grid-flow-row">
+    <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap">
+      <div>
+        {
+          (mode===2 && !lose) && (!playing ?  
+            <h4 className='text-center'>Turn of player 1</h4> :
+            <h4 className='text-center'>Turn of player 2</h4>)
+        }
+      </div>
 
-    <Answers 
-      question={question} 
-      nextB={nextB}
-      setNextB={setNextB} 
-      block={block}
-      setBlock={setBlock}
-      setCorrect={setCorrect}
-      setP1Score={setP1Score}
-      setP2Score={setP2Score}
-      setP1Lifes={setP1Lifes}
-      p1Lifes={p1Lifes}
-      setP2Lifes={setP2Lifes}
-      p2Lifes={p2Lifes}
-      playing={playing}
-      setPlaying={setPlaying}
-      setLose={setLose}
-      mode={mode}
-    />
+      <Question question={question.question}/>
+
+      <Answers 
+        question={question} 
+        nextB={nextB}
+        setNextB={setNextB} 
+        block={block}
+        setBlock={setBlock}
+        setCorrect={setCorrect}
+        setP1Score={setP1Score}
+        setP2Score={setP2Score}
+        setP1Lifes={setP1Lifes}
+        p1Lifes={p1Lifes}
+        setP2Lifes={setP2Lifes}
+        p2Lifes={p2Lifes}
+        playing={playing}
+        setPlaying={setPlaying}
+        setLose={setLose}
+        mode={mode}
+      />
+    </div>
 
     { 
       nextB && 
-        (correct ? 
+      (correct ? 
         <h2>You are correct</h2> :
         (<div>
           <h2>You are not correct</h2>
@@ -83,33 +88,37 @@ function Trivia({
       <button className="" onClick={handleNextB}>Next Button</button>
     }
 
-    { question &&
-      <Player
-        player={player1}
-      />
-    }
-
-    {
-      (mode === 2 && question) && 
-        <Player 
-          player={player2}
+    <div className="grid grid-cols-2 items-center gap-3">
+      { question &&
+        <Player
+          player={player1}
         />
-    }
+      }
 
-    {
-      (lose && mode===2) && (playing ?  
-        <h4>Player 1 loses</h4> :
-        <h4>Player 2 loses</h4> )
-    }
+      {
+        (mode === 2 && question) && 
+          <Player 
+            player={player2}
+          />
+      }
 
-    {
-      (lose && mode===1) && <h4>Player 1 loses</h4>
-    }
+      <div>
+        {
+          (lose && mode===2) && (playing ?  
+            <h4>Player 1 loses</h4> :
+            <h4>Player 2 loses</h4> )
+        }
+      </div>
 
-    { 
-      lose && 
-      <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
-    }
+      {
+        (lose && mode===1) && <h4>Player 1 loses</h4>
+      }
+
+      { 
+        lose && 
+          <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
+      }
+    </div>
 
   </div>);
 }
