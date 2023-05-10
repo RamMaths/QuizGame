@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import decodeHtml from './functionality/decoder';
-import randomizeArray from './functionality/randomNum';
+import { randomizeArray } from './functionality/randomNum';
 
 let answers=[];
+let colors=['yellow', 'lime', 'cyan', 'rose'];
+
+const colorVariants = {
+  yellow: 'bg-yellow-500 hover:bg-yellow-300',
+  lime: 'bg-lime-500 hover:bg-lime-300',
+  cyan: 'bg-cyan-500 hover:bg-cyan-300',
+  rose: 'bg-rose-500 hover:bg-rose-300'
+};
 
 const Answers = ({
   question,
@@ -25,6 +33,8 @@ const Answers = ({
   console.log(block);
 
   answers = nextB? answers : question && randomizeArray([...question.incorrect_answers, question.correct_answer]);
+
+  colors = nextB? colors : question && randomizeArray(['yellow', 'lime', 'cyan', 'rose']);
   
   const lose = () => {
     setLose(true);
@@ -67,11 +77,15 @@ const Answers = ({
     (answ !== question?.correct_answer && !block) && incorrect();
   };
 
-  return (<div className='answers'>
+  return (<div className='grid grid-cols-2 align-center p-2'>
     {question && answers.map((answ, i) => {
-      return <button className='btn' key={i} onClick={() => change(answ)}>{decodeHtml(answ)}</button>
+    return <Button className={`rounded-md w-28 h-20 px-4 m-2 ${colorVariants[colors[i]]}`} key={i} change={change} answ={answ}/>
     })}
     </div>);
+};
+
+const Button = ({className, change, answ}) => {
+  return <button className={className} onClick={() => change(answ)}>{decodeHtml(answ)}</button>;
 };
 
 export default Answers;

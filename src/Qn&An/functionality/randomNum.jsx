@@ -2,7 +2,7 @@ const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-const randomizeArray = (arr) => {
+export const randomizeArray = (arr) => {
   const set = new Set();
   const newArr = [];
 
@@ -18,4 +18,9 @@ const randomizeArray = (arr) => {
   return newArr;
 }
 
-export default randomizeArray;
+export const getColor = () => {
+  const colors = ['yellow', 'lime', 'cyan', 'rose'];
+  const index = getRandomInt(colors.length);
+  return colors[index];
+}
+

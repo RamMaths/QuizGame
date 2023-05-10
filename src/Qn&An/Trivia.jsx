@@ -17,8 +17,8 @@ function Trivia({
   const [block, setBlock] = useState(false);
   const [p1Score, setP1Score] = useState(0);
   const [p2Score, setP2Score] = useState(0);
-  const [p1Lifes, setP1Lifes] = useState(1);
-  const [p2Lifes, setP2Lifes] = useState(1);
+  const [p1Lifes, setP1Lifes] = useState(5);
+  const [p2Lifes, setP2Lifes] = useState(5);
   //false it's the first player
   const [playing, setPlaying] = useState(false);
   const [lose, setLose] = useState(false);
@@ -41,11 +41,11 @@ function Trivia({
     setBlock(false);
   };
 
-  return (<div className="trivia">
+  return (<div className="flex flex-col flex-wrap align-center">
     {
       (mode===2 && !lose) && (!playing ?  
-        <h4>Turn of player 1</h4> :
-        <h4>Turn of player 2</h4>)
+        <h4 className='text-center'>Turn of player 1</h4> :
+        <h4 className='text-center'>Turn of player 2</h4>)
     }
     
     <Question question={question.question}/>
@@ -80,7 +80,7 @@ function Trivia({
     }
 
     { nextB &&
-      <button className="next-btn btn" onClick={handleNextB}>Next Button</button>
+      <button className="" onClick={handleNextB}>Next Button</button>
     }
 
     { question &&
@@ -104,6 +104,11 @@ function Trivia({
 
     {
       (lose && mode===1) && <h4>Player 1 loses</h4>
+    }
+
+    { 
+      lose && 
+      <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
     }
 
   </div>);
