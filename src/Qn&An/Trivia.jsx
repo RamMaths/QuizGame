@@ -41,7 +41,7 @@ function Trivia({
     setBlock(false);
   };
 
-  return (<div className="flex flex-col flex-wrap align-center">
+  return (<div className="flex flex-col align-center bg-gray-500 rounded-md">
     {
       (mode===2 && !lose) && (!playing ?  
         <h4 className='text-center'>Turn of player 1</h4> :

@@ -21,28 +21,31 @@ function App() {
 
   return(
     <>
-      <Container question={question} getQuestion={getQuestion}/>
+      <Game question={question} getQuestion={getQuestion}/>
     </>
   );
 
 };
 
-const Container = ({question, getQuestion, setQuestion}) => {
-  const [mode, setMode] = useState(0);
+const Game = ({question, getQuestion, setQuestion}) => {
+  const [config, setConfig] = useState({});
   const [selected, setSelected] = useState(false);
+
+  console.log(config?.mode);
 
   return (
     <div className="flex flex-col items-center p-5">
       {!selected && 
       <ModeMenu 
         setSelected={setSelected}
-        setMode={setMode}
+        setConfig={setConfig}
+        setMode={setConfig}
         question={question}
         getQuestion={getQuestion}/>
       }
 
       {selected && 
-        <Trivia mode={mode}
+        <Trivia mode={+config?.mode}
         question={question}
         setQuestion={setQuestion}
         getQuestion={getQuestion}

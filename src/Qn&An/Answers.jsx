@@ -77,7 +77,7 @@ const Answers = ({
     (answ !== question?.correct_answer && !block) && incorrect();
   };
 
-  return (<div className='grid grid-cols-2 align-center p-2'>
+  return (<div className='grid grid-cols-2 gap-1'>
     {question && answers.map((answ, i) => {
     return <Button className={`rounded-md w-28 h-20 px-4 m-2 ${colorVariants[colors[i]]}`} key={i} change={change} answ={answ}/>
     })}
