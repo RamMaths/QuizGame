@@ -81,7 +81,7 @@ function Trivia({
       />
     </div>
 
-    <div className={!nextB && 'hidden'}>
+    <div className={!nextB ? 'hidden' : undefined}>
       <div className={correct?colorVariants.correctBg:colorVariants.incorrectBg}>
         <div>
           { 
@@ -125,14 +125,14 @@ function Trivia({
           <h4>Player 2 loses</h4> )
       }
 
-    {
-      (lose && mode===1) && <h4>Player 1 loses</h4>
-    }
+      {
+        (lose && mode===1) && <h4>Player 1 loses</h4>
+      }
 
-    { 
-      lose && 
-        <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
-    }
+      { 
+        lose && 
+          <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
+      }
     </div>
 
   </div>);
