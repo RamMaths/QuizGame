@@ -5,6 +5,13 @@ import Answers from './Answers';
 import decodeHtml from './functionality/decoder';
 import Player from './Player';
 
+const colorVariants = {
+  correctBg: 'bg-green-300 border-2 border-green-500 text-green-700 rounded-md mt-2 drop-shadow-md flex flex-col items-center text-center',
+  incorrectBg: 'bg-red-300 border-2 border-red-500 text-red-700 rounded-md mt-2 drop-shadow-md flex flex-col items-center text-center',
+  correctButton: 'bg-green-500 text-green-100 rounded-md p-1 m-2 hover:bg-green-400',
+  incorrectButton: 'bg-red-500 text-red-100 rounded-md p-1 m-2 hover:bg-red-400',
+};
+
 
 function Trivia({
   mode,
@@ -74,19 +81,26 @@ function Trivia({
       />
     </div>
 
-    { 
-      nextB && 
-      (correct ? 
-        <h2>You are correct</h2> :
-        (<div>
-          <h2>You are not correct</h2>
-          <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
-        </div>))
-    }
-
-    { nextB &&
-      <button className="" onClick={handleNextB}>Next Button</button>
-    }
+    <div className={!nextB && 'hidden'}>
+      <div className={correct?colorVariants.correctBg:colorVariants.incorrectBg}>
+        <div>
+          { 
+            nextB && 
+            (correct ? 
+              <h2>You are correct</h2> :
+              (<>
+                <h2>You are not correct</h2>
+                <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
+              </>))
+          }
+        </div>
+        <div>
+          { nextB &&
+            <button className={correct?colorVariants.correctButton:colorVariants.incorrectButton} onClick={handleNextB}>Next Button</button>
+          }
+        </div>
+      </div>
+    </div>
 
     <div className="grid grid-cols-2 items-center gap-3">
       { question &&
@@ -102,22 +116,23 @@ function Trivia({
           />
       }
 
-      <div>
-        {
-          (lose && mode===2) && (playing ?  
-            <h4>Player 1 loses</h4> :
-            <h4>Player 2 loses</h4> )
-        }
-      </div>
+    </div>
 
+    <div>
       {
-        (lose && mode===1) && <h4>Player 1 loses</h4>
+        (lose && mode===2) && (playing ?  
+          <h4>Player 1 loses</h4> :
+          <h4>Player 2 loses</h4> )
       }
 
-      { 
-        lose && 
-          <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
-      }
+    {
+      (lose && mode===1) && <h4>Player 1 loses</h4>
+    }
+
+    { 
+      lose && 
+        <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
+    }
     </div>
 
   </div>);
