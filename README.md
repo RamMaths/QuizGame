@@ -11,7 +11,7 @@ You can take a look to my game as a beta version, you are able to play as a sing
 
 These are some ideas that i will be implementing in my free time.
 
-- [] Navbar
-- [] Menu with more options to set the game
-- [] Log in connecting to [Firebase](https://firebase.google.com)
-- [] Save the highest score into the data base and put the profile of the best score in other section of the app
+- [ ] Navbar
+- [ ] Menu with more options to set the game
+- [ ] Log in connecting to [Firebase](https://firebase.google.com)
+- [ ] Save the highest score into the data base and put the profile of the best score in other section of the app
