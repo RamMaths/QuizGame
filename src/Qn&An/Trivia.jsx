@@ -49,11 +49,11 @@ function Trivia({
   };
 
   return (
-  <div className="grid grid-flow-row">
+  <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center`}>
     <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap">
       <div>
         {
-          (mode===2 && !lose) && (!playing ?  
+          (mode===2 && !lose && !nextB) && (!playing ?  
             <h4 className='text-center'>Turn of player 1</h4> :
             <h4 className='text-center'>Turn of player 2</h4>)
         }

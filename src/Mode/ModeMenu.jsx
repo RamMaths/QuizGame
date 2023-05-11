@@ -19,20 +19,20 @@ const ModeMenu = ({setSelected, setConfig, getQuestion}) => {
     setMode(e.target.value);
   };
 
-  return(<div className="flex flex-col items-center justify-center bg-zinc-700 text-zinc-100 w-60 h-48 rounded-lg" >
-    <h4 className="p-4">Select Mode</h4>
+  return(<div className="flex flex-col justify-center items-center bg-stone-200 rounded-md drop-shadow-md text-stone-600" >
+    <h1 className="p-4 text-xl border-b-2 h-1/3 border-b-gray-400">Select Mode</h1>
     <form className="flex flex-col items-start " onSubmit={start}>
 
       <label htmlFor='framework'>
         Select Players
       </label>
-      <select className="bg-gray-500 mt-1 mb-3" id="mode" name="mode" value={mode} onChange={handleMode}>
+      <select className="bg-stone-400 mt-1 mb-3" id="mode" name="mode" value={mode} onChange={handleMode}>
         {modes.map((mode) => {
           return <option key={mode}>{mode}</option>;
         })}
       </select>
       { 
-        <button type='submit' className="last:items-center bg-red-400 w-20 rounded-md m-2 hover:bg-red-300">Start</button>
+        <button type='submit' className="last:items-center bg-red-500 w-20 rounded-md m-2 hover:bg-red-300 text-red-200">Start</button>
       }
     </form>
   </div>);

@@ -34,7 +34,8 @@ const Game = ({question, getQuestion, setQuestion}) => {
   console.log(config?.mode);
 
   return (
-    <div className="flex flex-col items-center p-5">
+    <div className="grid grid-cols-1 items-center justify-center w-3/5 p-5 h-screen">
+
       {!selected && 
       <ModeMenu 
         setSelected={setSelected}
