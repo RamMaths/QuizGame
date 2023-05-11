@@ -5,4 +5,13 @@ It's not finished of course, i will be updating everything till it's finished. N
 - [x] React
 - [x] Tailwind css
 
+You can take a look to my game as a beta version, you are able to play as a single player or two players instead. [Click here to see the page](https://rammaths.github.io/QuizGame/).
 
+### Ideas
+
+These are some ideas that i will be implementing in my free time.
+
+- [] Navbar
+- [] Menu with more options to set the game
+- [] Log in connecting to [Firebase](https://firebase.google.com)
+- [] Save the highest score into the data base and put the profile of the best score in other section of the app
