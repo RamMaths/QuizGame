@@ -49,7 +49,7 @@ function Trivia({
   };
 
   return (
-  <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center`}>
+    <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center md:grid gap-3`}>
     <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap">
       <div>
         {

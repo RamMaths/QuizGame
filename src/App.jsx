@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import Trivia from './Qn&An/Trivia';
-import ModeMenu from './Mode/ModeMenu';
+import Game from './Game/Game';
 import './index.css';
 
 function App() {
@@ -21,39 +20,10 @@ function App() {
 
   return(
     <>
-      <Game question={question} getQuestion={getQuestion}/>
+      <Game question={question} getQuestion={getQuestion} setQuestion={setQuestion}/>
     </>
   );
 
-};
-
-const Game = ({question, getQuestion, setQuestion}) => {
-  const [config, setConfig] = useState({});
-  const [selected, setSelected] = useState(false);
-
-  console.log(config?.mode);
-
-  return (
-    <div className="grid grid-cols-1 items-center justify-center w-3/5 p-5 h-screen">
-
-      {!selected && 
-      <ModeMenu 
-        setSelected={setSelected}
-        setConfig={setConfig}
-        setMode={setConfig}
-        question={question}
-        getQuestion={getQuestion}/>
-      }
-
-      {selected && 
-        <Trivia mode={+config?.mode}
-        question={question}
-        setQuestion={setQuestion}
-        getQuestion={getQuestion}
-        />
-      }
-    </div>
-  );
 };
 
 export default App;
