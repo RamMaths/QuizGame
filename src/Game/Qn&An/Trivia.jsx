@@ -49,9 +49,9 @@ function Trivia({
   };
 
   return (
-  <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2`}>
-    <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full">
-      <div>
+  <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6`}>
+    <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96">
+      <div className="pt-3 text-xl text-stone-700">
         {
           (mode===2 && !lose && !nextB) && (!playing ?  
             <h4 className='text-center'>Turn of player 1</h4> :
@@ -81,15 +81,15 @@ function Trivia({
       />
     </div>
 
-    <div className={`${!nextB ? 'hidden' : undefined} md:row-start-3 md:row-end-4 md:col-span-3`}>
+    <div className={`${!nextB ? 'hidden' : undefined} md:row-start-3 md:row-end-4 md:col-span-3 md:text-2xl`}>
       <div className={correct?colorVariants.correctBg:colorVariants.incorrectBg}>
         <div>
           { 
             nextB && 
             (correct ? 
-              <h2>You are correct</h2> :
+              <h2 className="text-2xl">You are correct</h2> :
               (<>
-                <h2>You are not correct</h2>
+                <h2 className="text-2xl">You are not correct</h2>
                 <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
               </>))
           }
@@ -102,7 +102,7 @@ function Trivia({
       </div>
     </div>
 
-    <div className="grid grid-cols-2 items-center gap-3 w-full h-full md:grid-cols-1">
+    <div className="grid grid-cols-2 items-center gap-3 w-full h-full text-xl md:grid-cols-1 md:w-60 md:text-2xl">
       { question &&
         <Player
           player={player1}
@@ -118,20 +118,26 @@ function Trivia({
 
     </div>
 
-    <div>
+    <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md mb-8">
       {
         (lose && mode===2) && (playing ?  
-          <h4>Player 1 loses</h4> :
-          <h4>Player 2 loses</h4> )
+          <h4 className="text-red-500">Player 1 loses</h4> :
+          <h4 className="text-red-500">Player 2 loses</h4> )
       }
 
       {
-        (lose && mode===1) && <h4>Player 1 loses</h4>
+        (lose && mode===1) && <h4 className="text-red-500">Player 1 loses</h4>
       }
 
       { 
         lose && 
           <h2>The answer is {decodeHtml(question?.correct_answer)}</h2>
+      }
+
+      {
+        (lose && mode===2) && (!playing ?  
+          <h4 className="text-green-500">Player 1 wins</h4> :
+          <h4 className="text-green-500">Player 2 wins</h4> )
       }
     </div>
 

@@ -6,10 +6,10 @@ let answers=[];
 let colors=['yellow', 'lime', 'cyan', 'rose'];
 
 const colorVariants = {
-  yellow: 'bg-yellow-500 hover:bg-yellow-300',
-  lime: 'bg-lime-500 hover:bg-lime-300',
-  cyan: 'bg-cyan-500 hover:bg-cyan-300',
-  rose: 'bg-rose-500 hover:bg-rose-300'
+  yellow: 'bg-yellow-500 text-yellow-900 hover:bg-yellow-300',
+  lime: 'bg-lime-500 text-lime-900 hover:bg-lime-300',
+  cyan: 'bg-cyan-500 text-cyan-900 hover:bg-cyan-300',
+  rose: 'bg-rose-500 text-rose-900 hover:bg-rose-300'
 };
 
 const Answers = ({
@@ -79,7 +79,7 @@ const Answers = ({
 
     return (<div className='grid grid-cols-2 items-end'>
     {question && answers.map((answ, i) => {
-    return <Button className={`drop-shadow-md min-wit-full rounded-md px-4 m-2 h-5/6 ${colorVariants[colors[i]]}`} key={i} change={change} answ={answ}/>
+      return <Button className={`drop-shadow-md min-wit-full rounded-md px-4 m-3 h-5/6 ${colorVariants[colors[i]]} text-2xl md:p-6`} key={i} change={change} answ={answ}/>
     })}
     </div>);
 };

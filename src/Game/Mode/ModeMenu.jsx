@@ -19,7 +19,7 @@ const ModeMenu = ({setSelected, setConfig, getQuestion}) => {
     setMode(e.target.value);
   };
 
-  return(<div className="flex flex-col justify-center items-center bg-stone-200 rounded-md drop-shadow-md text-stone-600" >
+  return(<div className="flex flex-col justify-center items-center bg-stone-200 rounded-md drop-shadow-md text-stone-600 w-80 text-2xl" >
     <h1 className="p-4 text-xl border-b-2 h-1/3 border-b-gray-400">Select Mode</h1>
     <form className="flex flex-col items-start " onSubmit={start}>
 

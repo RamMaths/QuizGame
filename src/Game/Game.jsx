@@ -9,7 +9,7 @@ const Game = ({question, getQuestion, setQuestion}) => {
   console.log(config?.mode);
 
   return (
-    <div className="grid grid-cols-1 items-center justify-center w-5/8 p-5 h-screen">
+    <div className="grid grid-flow-row items-center justify-center p-5 w-full h-full">
       {!selected && 
       <ModeMenu 
         setSelected={setSelected}
