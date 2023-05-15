@@ -4,6 +4,7 @@ import Question from './Question';
 import Answers from './Answers';
 import decodeHtml from './functionality/decoder';
 import Player from './Player';
+import { useGameContext } from '../Game';
 
 const colorVariants = {
   correctBg: 'bg-green-300 border-2 border-green-500 text-green-700 rounded-md mt-2 drop-shadow-md flex flex-col items-center text-center',
@@ -30,6 +31,8 @@ function Trivia({
   const [playing, setPlaying] = useState(false);
   const [lose, setLose] = useState(false);
 
+  const { config } = useGameContext();
+
   const player1 = {
     num: 1,
     pScore: p1Score,
@@ -43,7 +46,7 @@ function Trivia({
   };
 
   const handleNextB = () => {
-    nextB && getQuestion();
+    nextB && getQuestion(config?.url);
     setNextB(false);
     setBlock(false);
   };
