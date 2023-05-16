@@ -54,7 +54,7 @@ function Trivia({
 
   return (
   <div className={`grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
-    <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96`}>
+    <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-60 h-60 md:w-96 md:h-full`}>
 
       <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
       role="status">
