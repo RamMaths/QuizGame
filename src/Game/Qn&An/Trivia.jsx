@@ -46,14 +46,23 @@ function Trivia({
   };
 
   const handleNextB = () => {
+    nextB && setQuestion(null);
     nextB && getQuestion(config?.url);
     setNextB(false);
     setBlock(false);
   };
 
   return (
-    <div className={`${!question ? 'hidden' : undefined} grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
-    <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96">
+  <div className={`grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
+    <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96`}>
+
+      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+      role="status">
+      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+      </div>
+
+    </div>
+    <div className={`${!question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96`}>
       <div className="pt-3 text-xl text-stone-700">
         {
           (mode===2 && !lose && !nextB) && (!playing ?  
@@ -62,7 +71,7 @@ function Trivia({
         }
       </div>
 
-      <Question question={question.question}/>
+      <Question question={question?.question}/>
 
       <Answers 
         question={question} 
@@ -106,7 +115,7 @@ function Trivia({
     </div>
 
     <div className="grid grid-cols-2 items-center gap-3 w-full h-full text-xl md:grid-cols-1 md:grid-rows-4 md:w-60 md:text-2xl md:gap-y-6">
-      { question &&
+      {
         <Player
           player={player1}
           className={`flex flex-col items-center justify-center bg-stone-100 rounded-md drop-shadow-lg p-2 md:row-start-1 md:row-span-2 md:h-full`}
@@ -114,7 +123,7 @@ function Trivia({
       }
 
       {
-        (mode === 2 && question) && 
+        (mode === 2) && 
           <Player 
             player={player2}
             className={`flex flex-col items-center justify-center bg-stone-100 rounded-md drop-shadow-lg p-2 md:row-start-3 md:row-span-2 md:h-full`}
