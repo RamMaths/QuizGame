@@ -1,5 +1,5 @@
 import { useState, createContext, useContext  } from 'react';
-import Trivia from './Qn&An/Trivia';
+import Trivia from './Trivia/Trivia';
 import ModeMenu from './Mode/ModeMenu';
 
 const GameContext = createContext();

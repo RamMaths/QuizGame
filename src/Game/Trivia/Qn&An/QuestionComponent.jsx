@@ -1,4 +1,27 @@
+import Question from './Question';
+import Answers from './Answers';
+import { useTriviaContext } from '../Trivia';
+
 const QuestionComponent = () => {
+  const {
+    question,
+    nextB, 
+    setNextB,
+    block,
+    setBlock,
+    setCorrect,
+    setP1Score,
+    setP2Score,
+    p1Lifes,
+    setP1Lifes,
+    p2Lifes,
+    setP2Lifes,
+    playing,
+    setPlaying,
+    setLose,
+    mode
+  } = useTriviaContext();
+
   return(
     <>
       <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-60 md:w-96 md:h-full`}>

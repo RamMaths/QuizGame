@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import decodeHtml from './functionality/decoder';
-import { randomizeArray } from './functionality/randomNum';
+import decodeHtml from '../functionality/decoder';
+import { randomizeArray } from '../functionality/randomNum';
 
 let answers=[];
 let colors=['yellow', 'lime', 'cyan', 'rose'];
