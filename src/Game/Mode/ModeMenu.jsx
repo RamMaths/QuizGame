@@ -43,7 +43,6 @@ const ModeMenu = ({setSelected, getQuestion}) => {
     const formData = new FormData(e.currentTarget);
     let newConfig = Object.fromEntries([...formData.entries()]);
     newConfig = {...newConfig, category: categories[categ], url: `${url}&category=${categories[categ]}`};
-    console.log(newConfig);
     setConfig(currConfig => {
       currConfig = {...newConfig}
       getQuestion(currConfig?.url);

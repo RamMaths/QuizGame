@@ -16,7 +16,6 @@ const Game = () => {
       const resp = await fetch(url);
       const { results } = await resp.json();
       const qData = results[0];
-      console.log('qData: ' + qData);
       setQuestion({...qData});
     } catch (err) {
       console.log(err.message);
