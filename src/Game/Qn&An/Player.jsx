@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Player = ({player, className}) => {
   const {num, pScore, pLifes} = player;
   return (<div className={className}>
@@ -8,4 +10,4 @@ const Player = ({player, className}) => {
   );
 };
 
-export default Player;
+export default memo(Player);

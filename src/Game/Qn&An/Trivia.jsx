@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Question from './Question';
 import Answers from './Answers';
 import decodeHtml from './functionality/decoder';
@@ -45,54 +45,15 @@ function Trivia({
     pLifes: p2Lifes
   };
 
-  const handleNextB = () => {
+  const handleNextB = useCallback(() => {
     nextB && setQuestion(null);
     nextB && getQuestion(config?.url);
     setNextB(false);
     setBlock(false);
-  };
+  }, [nextB]);
 
   return (
   <div className={`grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
-    <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-60 h-60 md:w-96 md:h-full`}>
-
-      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-      role="status">
-      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
-      </div>
-
-    </div>
-    <div className={`${!question ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96`}>
-      <div className="pt-3 text-xl text-stone-700">
-        {
-          (mode===2 && !lose && !nextB) && (!playing ?  
-            <h4 className='text-center'>Turn of player 1</h4> :
-            <h4 className='text-center'>Turn of player 2</h4>)
-        }
-      </div>
-
-      <Question question={question?.question}/>
-
-      <Answers 
-        question={question} 
-        nextB={nextB}
-        setNextB={setNextB} 
-        block={block}
-        setBlock={setBlock}
-        setCorrect={setCorrect}
-        setP1Score={setP1Score}
-        setP2Score={setP2Score}
-        setP1Lifes={setP1Lifes}
-        p1Lifes={p1Lifes}
-        setP2Lifes={setP2Lifes}
-        p2Lifes={p2Lifes}
-        playing={playing}
-        setPlaying={setPlaying}
-        setLose={setLose}
-        mode={mode}
-      />
-    </div>
-
     <div className={`${!nextB ? 'hidden' : undefined} md:row-start-3 md:row-end-4 md:col-span-3 md:text-2xl`}>
       <div className={correct?colorVariants.correctBg:colorVariants.incorrectBg}>
         <div>

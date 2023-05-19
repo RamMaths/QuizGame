@@ -24,26 +24,26 @@ const Game = () => {
   };
 
   return (
-    <GameContext.Provider value={{config, setConfig}}>
-      <div className="grid grid-flow-row items-center justify-center p-5 w-full h-full">
-        {!selected && 
-        <ModeMenu 
-          setSelected={setSelected}
-          setConfig={setConfig}
-          setMode={setConfig}
-          question={question}
-          getQuestion={getQuestion}/>
-        }
+    <div className="grid grid-flow-row items-center justify-center p-5 w-full h-full">
+      <GameContext.Provider value={{config, setConfig}}>
+      {!selected && 
+      <ModeMenu 
+        setSelected={setSelected}
+        setConfig={setConfig}
+        setMode={setConfig}
+        question={question}
+        getQuestion={getQuestion}/>
+      }
 
-        {selected && 
-          <Trivia mode={+config?.mode}
-          question={question}
-          setQuestion={setQuestion}
-          getQuestion={getQuestion}
-          />
-        }
-      </div>
-    </GameContext.Provider>
+      {selected && 
+        <Trivia mode={+config?.mode}
+        question={question}
+        setQuestion={setQuestion}
+        getQuestion={getQuestion}
+        />
+      }
+      </GameContext.Provider>
+    </div>
   );
 };
 

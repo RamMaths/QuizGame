@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo } from 'react';
 import decodeHtml from './functionality/decoder';
 import { randomizeArray } from './functionality/randomNum';
 
@@ -88,4 +88,4 @@ const Button = ({className, change, answ}) => {
   return <button className={className} onClick={() => change(answ)}>{decodeHtml(answ)}</button>;
 };
 
-export default Answers;
+export default memo(Answers);

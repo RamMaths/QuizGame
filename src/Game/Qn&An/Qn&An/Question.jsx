@@ -1,3 +1,4 @@
+import { memo } from "react";
 import decodeHtml from "./functionality/decoder";
 
 const Question = ({question}) => {
@@ -6,5 +7,4 @@ const Question = ({question}) => {
     </div>);
 };
 
-export default Question;
-
+export default memo(Question);
