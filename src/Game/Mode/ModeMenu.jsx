@@ -43,7 +43,6 @@ const ModeMenu = ({setSelected, getQuestion}) => {
     const formData = new FormData(e.currentTarget);
     let newConfig = Object.fromEntries([...formData.entries()]);
     newConfig = {...newConfig, category: categories[categ], url: `${url}&category=${categories[categ]}`};
-    console.log(newConfig);
     setConfig(currConfig => {
       currConfig = {...newConfig}
       getQuestion(currConfig?.url);
@@ -85,7 +84,7 @@ const ModeMenu = ({setSelected, getQuestion}) => {
 
       <div className="flex flex-col items-center">
         { 
-          <button type='submit' className="last:items-center bg-red-500 w-20 rounded-md m-2 hover:bg-red-300 text-red-200">Start</button>
+          <button type='submit' className="last:items-center bg-purple-500 w-20 rounded-md m-2 hover:bg-red-300 text-violet-100">Start</button>
         }
       </div>
     </form>

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .game {
+    @apply grid;
+    @apply grid-flow-row;
+    @apply items-center;
+    @apply justify-center;
+    @apply p-5;
+    height: 80vh;
+  }
+}

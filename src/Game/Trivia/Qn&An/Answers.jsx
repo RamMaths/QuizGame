@@ -29,9 +29,6 @@ const Answers = ({
   mode
   }) => {
 
-  console.log(question);
-  console.log(block);
-
   answers = nextB? answers : question && randomizeArray([...question.incorrect_answers, question.correct_answer]);
 
   colors = nextB? colors : question && randomizeArray(['yellow', 'lime', 'cyan', 'rose']);
@@ -39,7 +36,6 @@ const Answers = ({
   const lose = () => {
     setLose(true);
     setNextB(false);
-    console.log('you lose')
   };
 
   const correct = () => {

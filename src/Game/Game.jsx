@@ -1,6 +1,7 @@
 import { useState, createContext, useContext  } from 'react';
 import Trivia from './Trivia/Trivia';
 import ModeMenu from './Mode/ModeMenu';
+import './Game.css'
 
 const GameContext = createContext();
 
@@ -16,7 +17,6 @@ const Game = () => {
       const resp = await fetch(url);
       const { results } = await resp.json();
       const qData = results[0];
-      console.log('qData: ' + qData);
       setQuestion({...qData});
     } catch (err) {
       console.log(err.message);
@@ -24,7 +24,7 @@ const Game = () => {
   };
 
   return (
-    <div className="grid grid-flow-row items-center justify-center p-5 w-full h-full">
+    <div className="game">
       <GameContext.Provider value={{config, setConfig}}>
       {!selected && 
       <ModeMenu 
