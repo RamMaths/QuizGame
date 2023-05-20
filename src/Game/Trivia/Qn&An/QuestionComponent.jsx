@@ -18,6 +18,7 @@ const QuestionComponent = () => {
     setP2Lifes,
     playing,
     setPlaying,
+    lose,
     setLose,
     mode
   } = useTriviaContext();

@@ -1,6 +1,7 @@
 import { useState, createContext, useContext  } from 'react';
 import Trivia from './Trivia/Trivia';
 import ModeMenu from './Mode/ModeMenu';
+import './Game.css'
 
 const GameContext = createContext();
 
@@ -23,7 +24,7 @@ const Game = () => {
   };
 
   return (
-    <div className="grid grid-flow-row items-center justify-center p-5 w-full h-full">
+    <div className="game">
       <GameContext.Provider value={{config, setConfig}}>
       {!selected && 
       <ModeMenu 

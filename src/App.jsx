@@ -7,7 +7,7 @@ function App() {
   return(
     <>
       <Navbar/>
-      {/* <Game/> */}
+      <Game/>
     </>
   );
 
