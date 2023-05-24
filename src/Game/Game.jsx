@@ -27,7 +27,7 @@ const Game = () => {
   return (
     <Suspense>
       <div className="game">
-        <GameContext.Provider value={{config, setConfig}}>
+        <GameContext.Provider value={{config, setConfig, question, setQuestion, getQuestion}}>
         {!selected && 
         <ModeMenu 
           setSelected={setSelected}
@@ -38,11 +38,7 @@ const Game = () => {
         }
 
         {selected && 
-          <Trivia mode={+config?.mode}
-          question={question}
-          setQuestion={setQuestion}
-          getQuestion={getQuestion}
-          />
+          <Trivia/>
         }
         </GameContext.Provider>
       </div>
