@@ -1,7 +1,8 @@
-import { useState, createContext, useContext  } from 'react';
-import Trivia from './Trivia/Trivia';
+import { useState, createContext, useContext, Suspense, lazy  } from 'react';
 import ModeMenu from './Mode/ModeMenu';
 import './Game.css'
+
+const Trivia = lazy(() => import('./Trivia/Trivia'));
 
 const GameContext = createContext();
 
@@ -24,26 +25,28 @@ const Game = () => {
   };
 
   return (
-    <div className="game">
-      <GameContext.Provider value={{config, setConfig}}>
-      {!selected && 
-      <ModeMenu 
-        setSelected={setSelected}
-        setConfig={setConfig}
-        setMode={setConfig}
-        question={question}
-        getQuestion={getQuestion}/>
-      }
+    <Suspense>
+      <div className="game">
+        <GameContext.Provider value={{config, setConfig}}>
+        {!selected && 
+        <ModeMenu 
+          setSelected={setSelected}
+          setConfig={setConfig}
+          setMode={setConfig}
+          question={question}
+          getQuestion={getQuestion}/>
+        }
 
-      {selected && 
-        <Trivia mode={+config?.mode}
-        question={question}
-        setQuestion={setQuestion}
-        getQuestion={getQuestion}
-        />
-      }
-      </GameContext.Provider>
-    </div>
+        {selected && 
+          <Trivia mode={+config?.mode}
+          question={question}
+          setQuestion={setQuestion}
+          getQuestion={getQuestion}
+          />
+        }
+        </GameContext.Provider>
+      </div>
+    </Suspense>
   );
 };
 
