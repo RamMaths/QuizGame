@@ -8,7 +8,7 @@ const GameContext = createContext();
 
 export const useGameContext = () => useContext(GameContext);
 
-const Game = () => {
+const TriviaGame = () => {
   const [config, setConfig] = useState(null);
   const [selected, setSelected] = useState(false);
   const [question, setQuestion] = useState('');
@@ -46,4 +46,4 @@ const Game = () => {
   );
 };
 
-export default Game;
+export default TriviaGame;

@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .ttt-container {
+    @apply grid;
+    @apply grid-flow-row;
+    @apply items-center;
+    @apply justify-center;
+    @apply p-5;
+    height: 90vh;
+  }
+  
+  .ttt-box {
+    @apply grid;
+    @apply grid-flow-col;
+    @apply grid-cols-3;
+    @apply grid-rows-3;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-6;
+    @apply bg-stone-100;
+    @apply rounded-md;
+    @apply drop-shadow-md;
+    @apply p-10;
+  }
+
+  .btn-box {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply bg-stone-300;
+    @apply hover:bg-stone-200;
+    @apply rounded-md;
+    @apply drop-shadow-md;
+    @apply text-xl;
+    @apply w-16;
+    @apply h-16;
+  }
+
+  .btn-box:nth-child(1) {
+    @apply row-start-1;
+    @apply col-start-1;
+  }
+
+  .btn-box:nth-child(2) {
+    @apply row-start-1;
+    @apply col-start-2;
+  }
+
+  .btn-box:nth-child(3) {
+    @apply row-start-1;
+    @apply col-start-3;
+  }
+
+  .btn-box:nth-child(4) {
+    @apply row-start-2;
+    @apply col-start-1;
+  }
+
+  .btn-box:nth-child(5) {
+    @apply row-start-2;
+    @apply col-start-2;
+  }
+
+  .btn-box:nth-child(6) {
+    @apply row-start-2;
+    @apply col-start-3;
+  }
+
+  .btn-box:nth-child(7) {
+    @apply row-start-3;
+    @apply col-start-1;
+  }
+
+  .btn-box:nth-child(8) {
+    @apply row-start-3;
+    @apply col-start-2;
+  }
+
+  .btn-box:nth-child(9) {
+    @apply row-start-3;
+    @apply col-start-3;
+  }
+}
+
