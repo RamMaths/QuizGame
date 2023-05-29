@@ -1,15 +1,21 @@
 import React, { lazy } from 'react';
-import Navbar from './Navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
+import { About, HighScores, SharedComponents } from './Pages';
 const Game = lazy(() => import('./Game/Game'));
 
 
 function App() {
   return(
-    <>
-      <Navbar/>
-      <Game/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/QuizGame' element={<SharedComponents/>}>
+          <Route index element={<Game/>}/>
+          <Route path='highscores' element={<HighScores/>}/>
+          <Route path='about' element={<About/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 
 };
