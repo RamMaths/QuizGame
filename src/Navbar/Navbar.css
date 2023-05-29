@@ -31,6 +31,7 @@
   }
 
   .other {
+    display: none;
     visibility: hidden;
     opacity: 0;
     font-size: 1.5rem;
@@ -64,6 +65,7 @@
     .other {
       visibility: visible;
       opacity: 1;
+      display: block;
     }
     
     header nav {

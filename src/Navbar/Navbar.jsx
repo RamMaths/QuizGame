@@ -14,7 +14,7 @@ const Navbar = () => {
   return(
     <header className="">
       <div className="upper">
-        <h3>Logo</h3>
+        <h3 className="font-bungee text-xl">Trivia Ram</h3>
       </div>
       <nav ref={navRef} className="">
         <Link to='/QuizGame'>Game</Link>
