@@ -84,7 +84,7 @@ const ModeMenu = ({setSelected, getQuestion}) => {
 
       <div className="flex flex-col items-center">
         { 
-          <button type='submit' className="last:items-center bg-purple-500 w-20 rounded-md m-2 hover:bg-red-300 text-violet-100">Start</button>
+          <button type='submit' className="last:items-center bg-purple-500 w-20 rounded-md m-2 hover:bg-purple-400 text-violet-100">Start</button>
         }
       </div>
     </form>
