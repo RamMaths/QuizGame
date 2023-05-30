@@ -14,12 +14,13 @@ const Navbar = () => {
   return(
     <header className="">
       <div className="upper">
-        <h3>Logo</h3>
+        <Link to='/QuizGame/'><h3 className="font-bungee text-xl">Trivia Ram</h3></Link>
       </div>
       <nav ref={navRef} className="">
         <Link to='/QuizGame'>Game</Link>
         <Link to='/QuizGame/highscores'>High Scores</Link>
-        <Link to='/QuizGame/about'>About me</Link>
+        <Link to='/QuizGame/about'>About</Link>
+        <Link to='/QuizGame/login'>Log In</Link>
         <button className="nav-btn" onClick={showNavbar}>
               <FaTimes/>
         </button>

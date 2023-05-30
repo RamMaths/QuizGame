@@ -75,7 +75,7 @@ const Answers = ({
 
     return (<div className='grid grid-cols-2 items-end'>
     {question && answers.map((answ, i) => {
-      return <Button className={`drop-shadow-md min-wit-full rounded-md px-4 m-3 h-5/6 ${colorVariants[colors[i]]} text-2xl md:p-6`} key={i} change={change} answ={answ}/>
+      return <Button className={`drop-shadow-md min-wit-full rounded-md px-4 m-3 h-5/6 ${colorVariants[colors[i]]} md:text-lg sm:text-xl md:p-6`} key={i} change={change} answ={answ}/>
     })}
     </div>);
 };
