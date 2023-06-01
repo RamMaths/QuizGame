@@ -1,0 +1,58 @@
+.info-about {
+  color: rgb(163, 32, 82);
+}
+
+.info-about h2 {
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .content-about {
+    @apply grid;
+    @apply grid-flow-col;
+    @apply justify-center;
+    @apply items-center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin: 3rem;
+    width: 70vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.47);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+  }
+
+  .info-about {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    margin: 3rem;
+    margin-top: 0;
+    width: 40rem;
+    height: 20rem;
+    background: rgba(255, 255, 255, 0.47);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transform: translateX(-50px);
+  }
+
+  .img-box img {
+    max-width: 300px;
+    animation: animate 5s linear infinite;
+  }
+
+  @keyframes animate {
+    0%,100%
+    {
+      transform: translateY(50px);
+    }
+
+    50%
+    {
+      transform: translateY(10px);
+    }
+  }
+}
+
