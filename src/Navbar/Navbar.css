@@ -22,6 +22,7 @@
     @apply text-violet-100;
     margin-top: 1rem;
     border-radius: 20px;
+    backdrop-filter: blur(10px);
   }
 
   header  {
@@ -66,19 +67,19 @@
     visibility: hidden;
     opacity: 0;
     border-radius: 10px;
-    @apply bg-purple-800;
+    background-color: rgb(86, 42, 133);
     font-size: 1.5rem;
   }
 
   .btn-link {
     padding: 12px;
-    color: rgb(163, 32, 82);
+    color: rgb(86, 42, 133);
     font-weight: 800;
   }
 
   @media only screen and (min-width: 1024px) {
     .btn-link:hover {
-      color: rgb(163, 32, 82);
+      color: rgb(86, 42, 133);
       background: #fff;
       @apply drop-shadow-md;
       border-radius: 5px;
@@ -95,7 +96,7 @@
       display: block;
       visibility: visible;
       opacity: 1;
-      background: rgba(255, 102, 178, 0.8);
+      @apply bg-purple-500;
       box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       padding: 6px;;
@@ -126,9 +127,18 @@
       background: rgba(255, 102, 178, 0.8);
     }
     
+    .class-cont {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      z-index: 200;
+    }
     
     header nav {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       height: 55vh;
@@ -139,11 +149,11 @@
       justify-content: center;
       gap: 1.5rem;
       transition: 1s;
-      transform: translateY(-100vh);
-      background: rgba(255, 255, 255, 0.49);
+      transform: translateX(-100vw);
+      background: rgba(255, 255, 255, 0.8);
       box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
       backdrop-filter: blur(10px);
-      z-index: 100;
     }
 
     header .responsive_nav {
