@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useGameContext } from '../Game';
+import './ModeMenu.css';
 
 const url = 'https://opentdb.com/api.php?amount=1&difficulty=easy';
 
@@ -59,14 +60,14 @@ const ModeMenu = ({setSelected, getQuestion}) => {
     setCateg(e.target.value);
   }
 
-  return(<div className="flex flex-col justify-center items-center bg-stone-200 rounded-md drop-shadow-md text-stone-600 w-80 text-2xl" >
-    <h1 className="pt-4 text-3xl border-b-2 h-1/3 border-b-gray-400">Select Mode</h1>
+  return(<div className="container-mode" >
+    <h1 className="">Select Mode</h1>
     <form onSubmit={start}>
       <div className="flex flex-col align-center justify-start pt-3">
         <label htmlFor='framework'>
           Players
         </label>
-        <select className="bg-stone-400 mt-1 mb-3" id="mode" name="mode" value={mode} onChange={handleMode}>
+        <select className="bg-stone-100 mt-1 mb-3" id="mode" name="mode" value={mode} onChange={handleMode}>
           {modes.map((mode) => {
             return <option key={mode}>{mode}</option>;
           })}
@@ -75,7 +76,7 @@ const ModeMenu = ({setSelected, getQuestion}) => {
         <label htmlFor='framework'>
           Category
         </label>
-        <select className="bg-stone-400 mt-1 mb-3 w-52" id="mode" name="category" value={categ} onChange={handleCateg}>
+        <select className="bg-stone-100 mt-1 mb-3 w-52" id="mode" name="category" value={categ} onChange={handleCateg}>
           {Object.keys(categories).map((category) => {
             return <option key={category}>{category}</option>;
           })}

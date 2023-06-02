@@ -26,7 +26,7 @@ const PlayerBox = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 items-center gap-3 w-full h-full text-xl md:grid-cols-1 md:grid-rows-4 md:w-60 md:text-2xl md:gap-y-6">
+    <div className="grid grid-cols-2 items-center gap-3 w-full h-full text-lg m-4 md:grid-cols-1 md:grid-rows-4 md:w-60 md:text-2xl md:gap-y-6">
       {
         <Player
           player={player1}

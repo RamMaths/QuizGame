@@ -6,6 +6,8 @@ import Result from './Result';
 import PlayerBox from './Player/PlayerBox';
 import decodeHtml from './functionality/decoder';
 
+import './Trivia.css';
+
 const TriviaContext = createContext();
 
 export const useTriviaContext = () => useContext(TriviaContext);
@@ -38,7 +40,7 @@ const Trivia = () => {
         playing, setPlaying,
         lose, setLose,
         }}>
-        <div className={`grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
+        <div className="container-trivia">
 
           <QuestionComponent />
           <Result />
