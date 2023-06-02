@@ -32,7 +32,7 @@ const QuestionComponent = () => {
         </div>
 
       </div>
-      <div className={`${!question ? 'hidden' : undefined} flex flex-col justify-center items-center rounded-md drop-shadow-md flex-wrap w-full h-full md:w-96`}>
+      <div className={`${!question ? 'hidden' : undefined} `}>
         <div className="pt-3 text-xl text-stone-700">
           {
             (mode===2 && !lose && !nextB) && (!playing ?  

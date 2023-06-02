@@ -1,33 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.container-trivia {
+  @apply grid;
+  @apply grid-flow-row;
+  @apply items-center;
+  @apply justify-center;
+  @apply md:grid-flow-col;
+  @apply md:grid-cols-1;
+  @apply drop-shadow-md;
+  @apply h-full;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
 
-
-@layer base {
+@media only screen and (min: 1024px) {
   .container-trivia {
-    @apply grid;
-    @apply grid-flow-row;
-    @apply items-center;
-    @apply justify-center;
-    @apply gap-x-3;
-    @apply gap-y-3;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    width: 90vw;
-    height: 100%;
-    border-radius: 20px;
-    padding-top: 2rem;
-    padding-bottom: 0;
-    backdrop-filter: blur(10px);
-  }
 
-  @media only screen and (min-width: 1024px) {
-    .container-trivia {
-      @apply grid-flow-col;
-      @apply grid-cols-2;
-      height: 100%;
-      width: 70vw;
-      padding-bottom: 2rem;
-    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-trivia {
+    width: 90vw;
+
   }
 }

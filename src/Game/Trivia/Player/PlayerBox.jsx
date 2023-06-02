@@ -1,6 +1,7 @@
 import { useTriviaContext } from "../Trivia";
 import { useGameContext } from "../../Game";
 import Player from './Player';
+import './PlayerBox.css';
 
 const PlayerBox = () => {
 
@@ -26,11 +27,11 @@ const PlayerBox = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 items-center gap-3 w-full h-full text-lg m-4 md:grid-cols-1 md:grid-rows-4 md:w-60 md:text-2xl md:gap-y-6">
+    <div className="container-player">
       {
         <Player
           player={player1}
-          className={`flex flex-col items-center justify-center bg-stone-100 rounded-md drop-shadow-lg p-2 md:row-start-1 md:row-span-2 md:h-full`}
+          className="player-box"
         />
       }
 
@@ -38,7 +39,7 @@ const PlayerBox = () => {
         (+config.mode === 2) && 
           <Player 
             player={player2}
-            className={`flex flex-col items-center justify-center bg-stone-100 rounded-md drop-shadow-lg p-2 md:row-start-3 md:row-span-2 md:h-full`}
+            className="player-box"
           />
       }
     </div>

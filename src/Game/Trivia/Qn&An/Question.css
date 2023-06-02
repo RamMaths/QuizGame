@@ -1,0 +1,25 @@
+.container-question {
+  @apply flex;
+  @apply flex-col;
+  @apply justify-center;
+  @apply items-center;
+  @apply rounded-md;
+  @apply drop-shadow-md;
+  @apply w-full;
+  @apply h-full;
+  @apply row-start-1;
+}
+
+
+@media only screen and (min: 1024px) {
+  .container-trivia {
+
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-trivia {
+    width: 90vw;
+
+  }
+}

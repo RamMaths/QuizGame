@@ -40,7 +40,7 @@ const Trivia = () => {
         playing, setPlaying,
         lose, setLose,
         }}>
-        <div className="container-trivia">
+        <div className={'container-trivia'}>
 
           <QuestionComponent />
           <Result />

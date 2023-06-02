@@ -1,0 +1,39 @@
+.container-player {
+  @apply grid;
+  @apply grid-cols-2;
+  @apply items-center;
+  @apply gap-3;
+  @apply w-full;
+  @apply h-full;
+  @apply text-lg;
+  @apply md:grid-cols-1;
+  @apply md:grid-rows-4;
+  @apply md:w-60;
+  @apply md:text-2xl;
+  @apply md:gap-y-6;
+  @apply text-purple-900;
+}
+
+.player-box {
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply justify-center;
+  @apply bg-stone-100;
+  @apply rounded-md;
+  @apply drop-shadow-lg;
+  @apply md:row-start-1;
+  @apply md:row-span-2;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container-player {
+    margin: 3rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-player {
+    margin-top: 1rem;
+  }
+}
