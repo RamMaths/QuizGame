@@ -1,12 +1,8 @@
 .info-about {
-  color: rgb(163, 32, 82);
+  @apply text-purple-900;
 }
-
-.info-about h2 {
-  font-size: 2rem;
-}
-
 @media only screen and (min-width: 1024px) {
+
   .content-about {
     @apply grid;
     @apply grid-flow-col;
@@ -23,25 +19,60 @@
   }
 
   .info-about {
-    @apply flex;
-    @apply flex-col;
-    @apply justify-center;
+    @apply grid;
+    @apply grid-flow-row;
+    @apply justify-start;
     @apply items-center;
-    margin: 3rem;
     margin-top: 0;
-    width: 40rem;
-    height: 20rem;
+    height: 30rem;
+    padding: 5rem;
     background: rgba(255, 255, 255, 0.47);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     border-radius: 1rem;
     backdrop-filter: blur(10px);
-    transform: translateX(-50px);
+    transform: translateX(-90px);
+  }
+
+  .contact h3 {
+    padding-bottom: 1rem;
+  }
+
+  li .icons {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    padding-right: 10px;
+    padding-left: 3px;
+  }
+
+  .contact img {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 10rem;
+  }
+
+  .info-about h2 {
+    font-size: 2rem;
+  }
+
+  .info-about h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    padding-top: 2rem;
+  }
+
+  .contact {
+    @apply grid;
+    @apply grid-cols-2;
   }
 
   .img-box img {
     max-width: 300px;
     animation: animate 5s linear infinite;
   }
+
 
   @keyframes animate {
     0%,100%

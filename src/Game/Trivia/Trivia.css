@@ -6,11 +6,13 @@
   @apply md:grid-flow-col;
   @apply md:grid-cols-1;
   @apply drop-shadow-md;
-  @apply h-full;
+  height: 100%;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media only screen and (min: 1024px) {

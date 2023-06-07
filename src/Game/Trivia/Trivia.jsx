@@ -39,6 +39,7 @@ const Trivia = () => {
         p2Lifes, setP2Lifes,
         playing, setPlaying,
         lose, setLose,
+        mode: +config.mode
         }}>
         <div className={'container-trivia'}>
 
@@ -46,7 +47,7 @@ const Trivia = () => {
           <Result />
           <PlayerBox />
 
-          <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md mb-8">
+          <div className={`${!lose ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md mb-8`}>
             {
               (lose && config.mode===2) && (playing ?  
                 <h4 className="text-red-500">Player 1 loses</h4> :

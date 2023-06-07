@@ -33,7 +33,7 @@ const QuestionComponent = () => {
 
       </div>
       <div className={`${!question ? 'hidden' : undefined} `}>
-        <div className="pt-3 text-xl text-stone-700">
+        <div className="text-xl text-purple-900">
           {
             (mode===2 && !lose && !nextB) && (!playing ?  
               <h4 className='text-center'>Turn of player 1</h4> :

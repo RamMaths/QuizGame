@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import decodeHtml from '../functionality/decoder';
 import { randomizeArray } from '../functionality/randomNum';
+import { useTriviaContext } from '../Trivia';
 
 let answers=[];
 let colors=['yellow', 'lime', 'cyan', 'rose'];
@@ -12,22 +13,24 @@ const colorVariants = {
   rose: 'bg-rose-500 text-rose-900 hover:bg-rose-300'
 };
 
-const Answers = ({
-  question,
-  nextB,
-  setNextB,
-  block,
-  setBlock,
-  setCorrect,
-  setP1Score,
-  setP2Score,
-  setP1Lifes,
-  setP2Lifes,
-  playing,
-  setPlaying,
-  setLose,
-  mode
-  }) => {
+const Answers = () => {
+
+  const {
+    question,
+    nextB,
+    setNextB,
+    block,
+    setBlock,
+    setCorrect,
+    setP1Score,
+    setP2Score,
+    setP1Lifes,
+    setP2Lifes,
+    playing,
+    setPlaying,
+    setLose,
+    mode
+  } = useTriviaContext();
 
   answers = nextB? answers : question && randomizeArray([...question.incorrect_answers, question.correct_answer]);
 
