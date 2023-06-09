@@ -10,10 +10,29 @@
   @apply row-start-1;
 }
 
+.question {
+  @apply bg-zinc-100;
+  @apply drop-shadow-md;
+  @apply text-purple-900; 
+  @apply m-6;
+  @apply rounded-lg;
+  @apply min-w-fit;
+  @apply h-full;
+  @apply text-lg;
+  @apply md:text-2xl;
+  @apply flex;
+  @apply justify-center;
+}
+
 
 @media only screen and (min: 1024px) {
   .container-trivia {
 
+  }
+
+  .question {
+    min-width: 2.5rem;
+    max-width: 3rem;
   }
 }
 

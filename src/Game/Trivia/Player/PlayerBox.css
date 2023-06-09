@@ -1,16 +1,15 @@
 .container-player {
   @apply grid;
-  @apply grid-cols-2;
-  @apply items-center;
-  @apply w-full;
-  @apply h-full;
+  @apply grid-flow-col;
+  justify-content: center;
+  align-items: center;
   @apply text-lg;
-  @apply md:grid-cols-1;
-  @apply md:grid-rows-4;
-  @apply md:w-60;
-  @apply md:text-2xl;
-  @apply md:gap-y-6;
   @apply text-purple-900;
+  @apply gap-x-4;
+}
+
+.container-player:nth-child(1) {
+  @apply grid-cols-1;
 }
 
 .player-box {
@@ -21,16 +20,24 @@
   @apply bg-stone-100;
   @apply rounded-md;
   @apply drop-shadow-lg;
-  @apply md:row-start-1;
-  @apply md:row-span-2;
-  @apply gap-y-0;
-  margin: 1rem;
-  width: 80%;
+  width: 6rem;
 }
 
 @media only screen and (min-width: 1024px) {
   .container-player {
     width: 20vw;
+    @apply grid-cols-1;
+    @apply grid-rows-4;
+    @apply w-60;
+    @apply text-2xl;
+    @apply gap-y-6;
+  }
+
+  .player-box {
+    @apply row-start-1;
+    @apply row-span-2;
+    margin-left: 2.5rem;
+    width: 10rem;
   }
 }
 

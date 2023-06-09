@@ -1,7 +1,103 @@
 .info-about {
+  @apply grid;
+  @apply grid-flow-row;
+  @apply justify-start;
+  @apply items-center;
+  margin-top: 0;
+  height: 30rem;
+  padding: 5rem;
+  background: rgba(255, 255, 255, 0.47);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  transform: translateX(-40px);
+  height: 80%;
+}
+
+.contact h3 {
+  padding-bottom: 1rem;
+}
+
+li .icons {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  padding-right: 10px;
+  padding-left: 3px;
+}
+
+.contact img {
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 10rem;
+}
+
+.info-about h2 {
+  font-size: 2rem;
+}
+
+.info-about h3 {
+  font-size: 1.5rem;
+}
+
+.about-me {
+  padding-top: 2rem;
+}
+
+.contact {
+  @apply grid;
+  @apply grid-cols-2;
+}
+
+.info-about {
   @apply text-purple-900;
 }
-@media only screen and (min-width: 1024px) {
+
+.img-box img {
+  max-width: 300px;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%,100%
+  {
+    transform: translateY(50px);
+  }
+
+  50%
+  {
+    transform: translateY(10px);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .content-about {
+    @apply grid;
+    @apply grid-flow-col;
+    @apply justify-center;
+    @apply items-center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin: 3rem;
+    width: 80vw;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.47);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+  }
+
+  .contact img {
+    border-radius: 50%;
+    height: 10rem;
+  }
+
+  .img-box img {
+    max-width: 280px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
 
   .content-about {
     @apply grid;
@@ -18,72 +114,8 @@
     border-radius: 1rem;
   }
 
-  .info-about {
-    @apply grid;
-    @apply grid-flow-row;
-    @apply justify-start;
-    @apply items-center;
-    margin-top: 0;
-    height: 30rem;
-    padding: 5rem;
-    background: rgba(255, 255, 255, 0.47);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    border-radius: 1rem;
-    backdrop-filter: blur(10px);
-    transform: translateX(-90px);
-  }
-
-  .contact h3 {
-    padding-bottom: 1rem;
-  }
-
-  li .icons {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    padding-right: 10px;
-    padding-left: 3px;
-  }
-
-  .contact img {
-    padding: 0.5rem;
-    border-radius: 50%;
-    width: 10rem;
-  }
-
-  .info-about h2 {
-    font-size: 2rem;
-  }
-
-  .info-about h3 {
-    font-size: 1.5rem;
-  }
-
-  .about-me {
-    padding-top: 2rem;
-  }
-
-  .contact {
-    @apply grid;
-    @apply grid-cols-2;
-  }
-
   .img-box img {
     max-width: 300px;
-    animation: animate 5s linear infinite;
-  }
-
-
-  @keyframes animate {
-    0%,100%
-    {
-      transform: translateY(50px);
-    }
-
-    50%
-    {
-      transform: translateY(10px);
-    }
   }
 }
 

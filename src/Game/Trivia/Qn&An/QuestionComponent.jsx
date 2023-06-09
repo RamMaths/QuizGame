@@ -28,11 +28,11 @@ const QuestionComponent = () => {
       <div className={`${question ? 'hidden' : undefined} flex flex-col justify-center items-center rounded-md drop-shadow-md flex-wrap w-full h-60 md:w-96 md:h-full`}>
         <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-purple-900 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
           role="status">
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
         </div>
-
+        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
       </div>
-      <div className={`${!question ? 'hidden' : undefined} `}>
+
+      <div className={`${!question ? 'hidden' : undefined}`}>
         <div className="text-xl text-purple-900">
           {
             (mode===2 && !lose && !nextB) && (!playing ?  
