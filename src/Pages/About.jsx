@@ -9,7 +9,7 @@ const About = () => {
     <div className="content-about">
       <div className="info-about">
         <div className="contact">
-          <div className="flex justify-start align-center">
+          <div className="contact-photo">
             <img src={yo} alt="" />
           </div>
           <div className="pt-3">

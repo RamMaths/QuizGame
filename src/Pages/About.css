@@ -61,6 +61,12 @@ li .icons {
   animation: animate 5s linear infinite;
 }
 
+.contact-photo {
+  display: felx;
+  justify-content: start;
+  align-items: center;
+}
+
 @keyframes animate {
   0%,100%
   {
@@ -75,33 +81,42 @@ li .icons {
 
 @media only screen and (max-width: 750px) {
   .content-about {
-    @apply grid;
-    @apply grid-flow-row;
-    @apply grid-rows-2;
-    margin-top: 2rem;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.47);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    margin-top: 1.5rem;
   }
 
   .info-about {
-    @apply grid;
-    @apply grid-flow-row;
-    @apply justify-start;
-    @apply items-center;
-    margin-top: 0;
-    height: 0;
-    padding: 0;
-    border-radius: 1rem;
-    height: 80%;
-    width: 20rem;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto; 
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 90vw;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-photo {
+    justify-content: center;
+  }
+
+  .img-box {
+    position: relative;
+  }
+  
+  .img-box img {
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) and (min-width: 751px) {
   .content-about {
     @apply grid;
     @apply grid-flow-col;
