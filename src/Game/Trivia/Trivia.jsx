@@ -6,6 +6,8 @@ import Result from './Result';
 import PlayerBox from './Player/PlayerBox';
 import decodeHtml from './functionality/decoder';
 
+import './Trivia.css';
+
 const TriviaContext = createContext();
 
 export const useTriviaContext = () => useContext(TriviaContext);
@@ -37,14 +39,15 @@ const Trivia = () => {
         p2Lifes, setP2Lifes,
         playing, setPlaying,
         lose, setLose,
+        mode: +config.mode
         }}>
-        <div className={`grid grid-flow-row items-center justify-center gap-x-3 gap-y-3 md:grid-flow-col md:grid-col-2 md:gap-x-6 md:gap-y-0`}>
+        <div className={'container-trivia'}>
 
           <QuestionComponent />
           <Result />
           <PlayerBox />
 
-          <div className="flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md mb-8">
+          <div className={`${!lose ? 'hidden' : undefined} flex flex-col justify-center items-center bg-stone-100 rounded-md drop-shadow-md mb-8`}>
             {
               (lose && config.mode===2) && (playing ?  
                 <h4 className="text-red-500">Player 1 loses</h4> :

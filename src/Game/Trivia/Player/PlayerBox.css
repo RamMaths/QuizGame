@@ -1,0 +1,48 @@
+.container-player {
+  @apply grid;
+  @apply grid-flow-col;
+  justify-content: center;
+  align-items: center;
+  @apply text-lg;
+  @apply text-purple-900;
+  @apply gap-x-4;
+}
+
+.container-player:nth-child(1) {
+  @apply grid-cols-1;
+}
+
+.player-box {
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply justify-center;
+  @apply bg-stone-100;
+  @apply rounded-md;
+  @apply drop-shadow-lg;
+  width: 6rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container-player {
+    width: 20vw;
+    @apply grid-cols-1;
+    @apply grid-rows-4;
+    @apply w-60;
+    @apply text-2xl;
+    @apply gap-y-6;
+  }
+
+  .player-box {
+    @apply row-start-1;
+    @apply row-span-2;
+    margin-left: 2.5rem;
+    width: 10rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container-player {
+    margin-top: 1rem;
+  }
+}

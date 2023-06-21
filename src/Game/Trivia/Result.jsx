@@ -34,7 +34,7 @@ const Result = () => {
 
 
   return (
-    <div className={`${!nextB ? 'hidden' : undefined} md:row-start-3 md:row-end-4 md:col-span-3 md:text-2xl`}>
+    <div className={`${!nextB ? 'hidden' : undefined} md:row-start-2 md:row-end-2 md:col-span-2 md:text-2xl ml-6 mr-6`}>
       <div className={correct?colorVariants.correctBg:colorVariants.incorrectBg}>
         <div>
           { 

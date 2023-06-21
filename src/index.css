@@ -10,4 +10,26 @@
     box-sizing: border-box;
   }
 
+  .bg {
+    background: url(./assets/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    opacity: 0.75;
+    z-index: -1;
+  }
+  
+  .root {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    @apply flex-col;
+  }
 }
