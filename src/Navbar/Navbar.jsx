@@ -19,9 +19,7 @@ const Navbar = () => {
         </div>
         <nav ref={navRef} className="">
           <Link className="btn-link" to='/QuizGame'>Game</Link>
-          <Link className="btn-link" to='/QuizGame/highscores'>High Scores</Link>
           <Link className="btn-link" to='/QuizGame/about'>About</Link>
-          <Link className="btn-link login" to='/QuizGame/login'>Log In</Link>
           <button className="nav-btn" onClick={showNavbar}>
             <FaTimes/>
           </button>
